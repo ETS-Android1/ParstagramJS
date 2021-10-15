@@ -66,4 +66,12 @@
         android:layout_marginBottom="15dp"
         android:text="Logout" />
 
+    <ProgressBar
+        android:id="@+id/pbLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="91dp"
+        android:visibility="invisible" />
 </RelativeLayout>
