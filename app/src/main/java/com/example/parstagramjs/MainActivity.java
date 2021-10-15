@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         btnSubmit = findViewById(R.id.btnSubmit);
         ivPicture = findViewById(R.id.ivPicture);
 
+        queryPosts();
+
     }
 
     private void queryPosts() {
