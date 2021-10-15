@@ -51,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
         ivPicture = findViewById(R.id.ivPicture);
         btnLogout = findViewById(R.id.btnLogout);
 
+        btnSubmit.setVisibility(View.INVISIBLE);
+
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -114,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
             if (resultCode == RESULT_OK) {
                 Bitmap takenImage = BitmapFactory.decodeFile(photoFile.getAbsolutePath());
                 ivPicture.setImageBitmap(takenImage);
+                btnSubmit.setVisibility(View.VISIBLE);
             } else {
                 Toast.makeText(this, "Picture wasn't taken!", Toast.LENGTH_SHORT).show();
             }
@@ -143,7 +146,9 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Error while saving!", Toast.LENGTH_SHORT).show();
                 }
                 Log.i(TAG, "Post save was successful!");
+                Toast.makeText(MainActivity.this, "Post saved!", Toast.LENGTH_SHORT).show();
                 etDescription.setText("");
+                btnSubmit.setVisibility(View.INVISIBLE);
                 ivPicture.setImageResource(0);
             }
         });
